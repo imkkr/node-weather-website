@@ -10,7 +10,12 @@ const forecast = (latitude, longitude, callback) => {
             callback('Please check the coordinates or try a different location',undefined)
         }
         else{
-            callback(undefined, body.current.weather[0].description)
+            callback(undefined, {
+                current_temperature: body.current.temp,
+                feels_like: body.current.feels_like,
+                weather: body.current.weather[0].description
+
+            })
         }
     })
 }
