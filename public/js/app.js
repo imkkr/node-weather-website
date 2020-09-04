@@ -25,8 +25,8 @@ weatherForm.addEventListener('submit',(e) => {
         else{
             messageOne.textContent="Location:"+data.location
             messageTwo.textContent = "Weather:"+data.forecast
-            messageThree.textContent = "Current Temperature:"+data.current_temperature
-            messageFour.textContent = "Feels Like:"+data.feels_like
+            messageThree.textContent = "Current Temperature:"+(data.current_temperature - 273.15).toFixed(2)+ " degree celcius"
+            messageFour.textContent = "Feels Like:"+(data.feels_like-273.15).toFixed(2)+" degree celcius"
         }
     })
 })
